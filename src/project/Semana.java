@@ -14,16 +14,18 @@ import java.util.Date;
  * @author joaod
  */
 public class Semana extends javax.swing.JFrame {
+    //variaveis que serão usadas depois da criação dos objetos swing
     int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
     int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
     int valorselecao = 0;
-    /**
-     * Creates new form Semana
-     */
+     
     public Semana() {
+        //intanciando a classe Utilidades
         Utilidades u = new Utilidades();
+        //aplicando os metodos na classe semana
         u.utilidade(this);
         initComponents();
+        //iniciando os metodos criandos nessa classe
         iniciocalendario();
         calendario();
         

@@ -14,10 +14,14 @@ import javax.swing.JFrame;
  */
 public class Utilidades{
     public void utilidade(JFrame frame){
+    //Tira as bordas da janela
     frame.setUndecorated(true);
+    //defini o fundo como transparente, mas esse metodo só é possivel sem as bordas da janela
     frame.setBackground(new Color(0,0,0,0));
+    //tira o foco da janela
     frame.setFocusableWindowState(false);
     frame.setFocusCycleRoot(false);
+    //tira o foco principal
     frame.setFocusable(false);
     }
 }
