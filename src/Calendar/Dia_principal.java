@@ -5,9 +5,7 @@
  */
 package Calendar;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.swing.DefaultListModel;
 
 
@@ -19,8 +17,9 @@ import javax.swing.DefaultListModel;
 public class Dia_principal extends javax.swing.JFrame {
 
     dia_hoje dia_hoje = new dia_hoje();
+    agenda agenda = new agenda();
     String texto;
-    ArrayList<String> agenda = new ArrayList();
+    
     
     public Dia_principal() {
         
@@ -170,17 +169,15 @@ public class Dia_principal extends javax.swing.JFrame {
 
     private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
         // Botão de Adicionar a lista
-        int Tamanho = agenda.size();
-        texto = colocartexto.getText();
-        agenda.add(texto);
         
-         int i;
-        int n = agenda.size();
+        texto = colocartexto.getText();
+        agenda.adicionar(texto);
+        
+       int i;
+       int n = agenda.tamanho();
        DefaultListModel listModel = new DefaultListModel(); 
-       i=0;
-       for (String percorrer: agenda) {
-               listModel.addElement(i+" "+percorrer);
-               i++;
+       for (i=0;i<n;i++) {
+               listModel.addElement(i+" "+agenda.texto1(i));
             }
             L.setModel(listModel);
                                         
@@ -190,12 +187,10 @@ public class Dia_principal extends javax.swing.JFrame {
     private void AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarActionPerformed
         // Botão de Atualizar a Lista
         int i;
-        int n = agenda.size();
+        int n = agenda.tamanho();
        DefaultListModel listModel = new DefaultListModel(); 
-       i=0;
-       for (String percorrer: agenda) {
-               listModel.addElement(i+" "+percorrer);
-               i++;
+       for (i=0;i<n;i++) {
+               listModel.addElement(i+" "+agenda.texto1(i));
             }
             L.setModel(listModel);
     }//GEN-LAST:event_AtualizarActionPerformed
@@ -203,7 +198,7 @@ public class Dia_principal extends javax.swing.JFrame {
     private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
         //Botão de remover da lista
         int sonumero = Integer.parseInt(tirar.getText());
-        agenda.remove(sonumero);
+        agenda.remover(sonumero);
     
     }//GEN-LAST:event_removerActionPerformed
 
@@ -260,12 +255,7 @@ public class Dia_principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
        public void trocatexto(){
        
-    agenda.add("Juca Bala;11 1111-1111");
-    agenda.add("Marcos Paqueta;22 2222-2222");
-    agenda.add("Maria Antonieta;33 3333-3333");
-    agenda.add("Antônio Conselheiro;44 4444-4444");
     
-    D.setText("");
     
     //adicionando o texto nas variaveis
     D.setText("Dia "+dia_hoje.DiaFixo());
