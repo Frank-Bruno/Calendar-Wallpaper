@@ -35,7 +35,7 @@ public class agenda {
   public void ag1() {
    
     ArrayList<String> agenda = new ArrayList();
-
+    i=0;
     for (i=0; i<n; i++) {
         agenda.add(t);
     }
