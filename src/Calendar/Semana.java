@@ -8,12 +8,15 @@ package Calendar;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.DefaultListModel;
 
 /**
  *
  * @author joaod
  */
 public class Semana extends javax.swing.JFrame {
+    //instanciando a agenda
+    agenda agenda = new agenda();
     //variaveis que serão usadas depois da criação dos objetos swing
     int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
     int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
@@ -24,6 +27,7 @@ public class Semana extends javax.swing.JFrame {
         Utilidades u = new Utilidades();
         //aplicando os metodos na classe semana
         u.utilidade(this);
+        
         initComponents();
         //iniciando os metodos criandos nessa classe
         iniciocalendario();
@@ -64,7 +68,8 @@ public class Semana extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         data3 = new javax.swing.JLabel();
         h3 = new javax.swing.JLabel();
-        T3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        T3 = new javax.swing.JList<>();
         jPanel5 = new javax.swing.JPanel();
         data4 = new javax.swing.JLabel();
         h4 = new javax.swing.JLabel();
@@ -169,11 +174,12 @@ public class Semana extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(data, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(data, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(h, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(h, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(T, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(T, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,11 +211,12 @@ public class Semana extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(data1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(data1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(h1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(h1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(T1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(T1, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,11 +248,12 @@ public class Semana extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(data2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(data2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(h2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(h2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(T2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(T2, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,6 +267,7 @@ public class Semana extends javax.swing.JFrame {
         jPanel8.add(jPanel3);
 
         jPanel4.setOpaque(false);
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         data3.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         data3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -266,31 +275,17 @@ public class Semana extends javax.swing.JFrame {
         data3.setToolTipText("");
         data3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         data3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel4.add(data3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
 
         h3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         h3.setText("Hora");
+        jPanel4.add(h3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 62, 110));
 
-        T3.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        T3.setText("Tarefa");
+        T3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        T3.setOpaque(false);
+        jScrollPane1.setViewportView(T3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(data3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(h3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(data3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(h3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(T3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 40, 84, 110));
 
         jPanel8.add(jPanel4);
 
@@ -313,11 +308,12 @@ public class Semana extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(data4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(data4, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(h4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(h4, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(T4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(T4, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,11 +345,12 @@ public class Semana extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(data5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(data5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(h5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(h5, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(T5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(T5, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,11 +382,12 @@ public class Semana extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(data6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(data6, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(h6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(h6, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(T6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(T6, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,7 +455,7 @@ public class Semana extends javax.swing.JFrame {
     public javax.swing.JLabel T;
     public javax.swing.JLabel T1;
     public javax.swing.JLabel T2;
-    public javax.swing.JLabel T3;
+    private javax.swing.JList<String> T3;
     public javax.swing.JLabel T4;
     public javax.swing.JLabel T5;
     public javax.swing.JLabel T6;
@@ -490,6 +488,7 @@ public class Semana extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
     public void iniciocalendario(){
@@ -632,17 +631,18 @@ public class Semana extends javax.swing.JFrame {
         T.setText("");
         T1.setText("");
         T2.setText("");
-        T3.setText("");
+        
+        DefaultListModel listModel = new DefaultListModel(); 
+        int i;
+        int n = agenda.tamanho();
+        for (i=0;i<n;i++) {
+               listModel.addElement(i+" "+agenda.texto1(i));
+            }
+            T3.setModel(listModel);
         T4.setText("");
         T5.setText("");
         T6.setText("");
         //adicionando o texto nas variaveis
-        T.setText("");
-        T1.setText("");
-        T2.setText("");
-        T3.setText("");
-        T4.setText("");
-        T5.setText("");
-        T6.setText("");
+        
     }
 }
