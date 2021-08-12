@@ -5,8 +5,10 @@
  */
 package Calendar;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+
 
 /**
  *
@@ -18,7 +20,9 @@ public class Dia_principal extends javax.swing.JFrame {
      * Creates new form Dia_principal
      */
     public Dia_principal() {
+        
         initComponents();
+        trocatexto();
     }
     
     /**
@@ -30,21 +34,18 @@ public class Dia_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        D = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        L = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 220, 60));
+        D.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        D.setText("jLabel1");
+        getContentPane().add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("jTextField1");
@@ -62,6 +63,12 @@ public class Dia_principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+
+        L.setColumns(20);
+        L.setRows(5);
+        jScrollPane1.setViewportView(L);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,9 +117,37 @@ public class Dia_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel D;
+    private javax.swing.JTextArea L;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+       public void trocatexto(){
+          // [ A ] declarando e instanciando uma agenda de contatos
+    ArrayList<String> agenda = new ArrayList();
+
+    // [ B ] usando o método add() para gravar 4 contatos na agenda
+    agenda.add("Juca Bala;11 1111-1111");
+    agenda.add("Marcos Paqueta;22 2222-2222");
+    agenda.add("Maria Antonieta;33 3333-3333");
+    agenda.add("Antônio Conselheiro;44 4444-4444");
+
+     D.setText("");
+        L.setText(""); 
+        //adicionando o texto nas variaveis
+        D.setText("");
+    int i;
+    int n = agenda.size();
+    for (i=0; i<n; i++) {
+      L.insert("\n"+agenda.get(i)+" \n", i);
+      
+    }
+       
+       
+       }
+    
+        
+        
+
 }
