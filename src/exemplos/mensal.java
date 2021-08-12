@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utilitarios;
+package exemplos;
 
 import javax.swing.JFrame;
+import project.Utilidades;
 import project.Utilidades;
 
 
@@ -40,7 +41,7 @@ public class mensal extends javax.swing.JFrame {
     private void initComponents() {
 
         Fechar = new javax.swing.JButton();
-        drawPanel21 = new project.DrawPanel2();
+        drawPanel21 = new exemplos.DrawPanel2();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("frame");
@@ -144,7 +145,7 @@ public class mensal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Fechar;
-    private project.DrawPanel2 drawPanel21;
+    private exemplos.DrawPanel2 drawPanel21;
     // End of variables declaration//GEN-END:variables
 
  

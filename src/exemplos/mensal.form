@@ -69,7 +69,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FecharActionPerformed"/>
       </Events>
     </Component>
-    <Component class="project.DrawPanel2" name="drawPanel21">
+    <Component class="exemplos.DrawPanel2" name="drawPanel21">
     </Component>
   </SubComponents>
 </Form>
