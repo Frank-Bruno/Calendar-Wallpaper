@@ -8,7 +8,6 @@ package Calendar;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import javax.swing.DefaultListModel;
 
 
@@ -19,7 +18,7 @@ import javax.swing.DefaultListModel;
  */
 public class Dia_principal extends javax.swing.JFrame {
 
-    int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
+    dia_hoje dia_hoje = new dia_hoje();
     String texto;
     ArrayList<String> agenda = new ArrayList();
     
@@ -265,19 +264,13 @@ public class Dia_principal extends javax.swing.JFrame {
     agenda.add("Marcos Paqueta;22 2222-2222");
     agenda.add("Maria Antonieta;33 3333-3333");
     agenda.add("Antônio Conselheiro;44 4444-4444");
-    SimpleDateFormat Dia = new SimpleDateFormat("dd");
-    SimpleDateFormat Mes = new SimpleDateFormat("MM");
-    SimpleDateFormat Ano = new SimpleDateFormat("YY");
-       
-    DiaFIXO = Integer.parseInt(Dia.format(new Date()));
-    AnoFIXO = Integer.parseInt(Ano.format(new Date()));
-    MesFIXO = Integer.parseInt(Mes.format(new Date()));
+    
     D.setText("");
     
     //adicionando o texto nas variaveis
-    D.setText("Dia "+DiaFIXO);
-    mes.setText("Mês "+MesFIXO);
-    ano.setText("Ano "+AnoFIXO);
+    D.setText("Dia "+dia_hoje.DiaFixo());
+    mes.setText("Mês "+dia_hoje.MesFixo());
+    ano.setText("Ano "+dia_hoje.AnoFixo());
     
        
        
