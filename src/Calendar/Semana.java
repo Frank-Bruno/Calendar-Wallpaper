@@ -16,7 +16,7 @@ import javax.swing.JFrame;
  * @author joaod
  */
 public class Semana extends javax.swing.JFrame {
-    public static Semana menu;
+    public static Semana semana;
     //instanciando a agenda
     agenda agenda = new agenda();
     //variaveis que serão usadas depois da criação dos objetos swing
@@ -468,7 +468,8 @@ public class Semana extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Semana().setVisible(true);
+                semana = new Semana();
+                semana.setVisible(true);
                 
             }
         });

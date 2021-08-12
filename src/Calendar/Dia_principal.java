@@ -22,7 +22,6 @@ public class Dia_principal extends javax.swing.JFrame {
     
     
     public Dia_principal() {
-        
         initComponents();
         trocatexto();
     }
@@ -174,7 +173,7 @@ public class Dia_principal extends javax.swing.JFrame {
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-        Semana.menu.setVisible(true);
+        Principal.semana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_voltarActionPerformed
 
