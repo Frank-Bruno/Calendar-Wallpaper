@@ -24,7 +24,6 @@ public class Semana extends javax.swing.JFrame {
         Utilidades u = new Utilidades();
         //aplicando os metodos na classe semana
         u.utilidade(this);
-        agenda a = new agenda();
         initComponents();
         //iniciando os metodos criandos nessa classe
         iniciocalendario();
