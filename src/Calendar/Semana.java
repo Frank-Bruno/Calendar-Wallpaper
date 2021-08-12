@@ -24,6 +24,7 @@ public class Semana extends javax.swing.JFrame {
         Utilidades u = new Utilidades();
         //aplicando os metodos na classe semana
         u.utilidade(this);
+        agenda a = new agenda();
         initComponents();
         //iniciando os metodos criandos nessa classe
         iniciocalendario();
@@ -503,6 +504,7 @@ public class Semana extends javax.swing.JFrame {
         
     }
     public void calendario(){
+        //limpa o texto das variaveis
         data.setText("");
         data1.setText("");
         data2.setText("");
@@ -510,6 +512,7 @@ public class Semana extends javax.swing.JFrame {
         data4.setText("");
         data5.setText("");
         data6.setText("");
+        //adicionando o texto nas variaveis
         data.setText(""+(DiaFIXO - 3));
         data1.setText(""+(DiaFIXO - 2));
         data2.setText(""+(DiaFIXO - 1));
@@ -610,7 +613,7 @@ public class Semana extends javax.swing.JFrame {
             default:
                 break;
         }
-        
+        //limpa o texto das variaveis
         jLabel1.setText("");
         jLabel2.setText("");
         jLabel3.setText("");
@@ -618,7 +621,7 @@ public class Semana extends javax.swing.JFrame {
         jLabel5.setText("");
         jLabel6.setText("");
         jLabel7.setText("");
-        
+        //adicionando o texto nas variaveis
         jLabel1.setText(""+DiaSemana1);
         jLabel2.setText(""+DiaSemana2);
         jLabel3.setText(""+DiaSemana3);
@@ -626,7 +629,21 @@ public class Semana extends javax.swing.JFrame {
         jLabel5.setText(""+DiaSemana5);
         jLabel6.setText(""+DiaSemana6);
         jLabel7.setText(""+DiaSemana7);
-        
-         
+        //limpa o texto das variaveis
+        T.setText("");
+        T1.setText("");
+        T2.setText("");
+        T3.setText("");
+        T4.setText("");
+        T5.setText("");
+        T6.setText("");
+        //adicionando o texto nas variaveis
+        T.setText("");
+        T1.setText("");
+        T2.setText("");
+        T3.setText("");
+        T4.setText("");
+        T5.setText("");
+        T6.setText("");
     }
 }

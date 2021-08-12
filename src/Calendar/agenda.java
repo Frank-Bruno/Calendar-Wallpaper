@@ -14,19 +14,19 @@ public class agenda {
     //Variavel de controle
     private int i;
     //Variavel para saber quantos adicionar
-    private final int n;
+    private int n;
     //Variavel para adicionar a tarefa
-    private final String t;
+    private String t;
     //Variavel para definir a posição da lista de saida
     private int s;
     //Variavel de saída
     private String sa;
     //setando as variaveis
   public agenda (int n, String t){
-        
         this.n = n;
         this.t = t;
     }
+
   //retorno das variaveis
   public String ag2(int s){
       return sa;
