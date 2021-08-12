@@ -6,13 +6,23 @@
 package exemplos;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
-import java.util.Scanner;
 
-public class Arraylist {
-
-  public static void main(String[] args) {
-    Scanner ler = new Scanner(System.in);
+public class agenda {
+    private int i;
+    private int n;
+    private String t;
+    private Date d;
+    
+  public agenda (int i, int n, String t, Date d){
+        this.i = i;
+        this.n = n;
+        this.t = t;
+        this.d = d;
+    }
+  public void ag1() {
+    
 
     // [ A ] declarando e instanciando uma agenda de contatos
     ArrayList<String> agenda = new ArrayList();
@@ -23,18 +33,16 @@ public class Arraylist {
     agenda.add("Maria Antonieta;33 3333-3333");
     agenda.add("Antônio Conselheiro;44 4444-4444");
 
-    int i;
 
     // [ C ] mostrando os "n" contatos da agenda (usando o índice)
     // número de elementos da agenda: método size()
     System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
-    int n = agenda.size();
+    n = agenda.size();
     for (i=0; i<n; i++) {
       System.out.printf("Posição %d- %s\n", i, agenda.get(i));
     }
 
-    System.out.printf("\nInforme a posição a ser excluída:\n");
-    i = ler.nextInt();
+    
 
     try {
       // [ D ] remove o i-ésimo contato da agenda

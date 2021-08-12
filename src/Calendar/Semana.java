@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+package Calendar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -84,7 +84,7 @@ public class Semana extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Fechar.setBackground(new java.awt.Color(0, 0, 0));
-        Fechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/project/imag/Fechar.png"))); // NOI18N
+        Fechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Calendar/imag/Fechar.png"))); // NOI18N
         Fechar.setBorder(null);
         Fechar.setBorderPainted(false);
         Fechar.setContentAreaFilled(false);
