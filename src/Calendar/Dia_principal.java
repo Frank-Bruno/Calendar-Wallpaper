@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import javax.swing.DefaultListModel;
 
 
 
@@ -39,12 +40,14 @@ public class Dia_principal extends javax.swing.JFrame {
 
         D = new javax.swing.JLabel();
         colocartexto = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        L = new javax.swing.JTextArea();
+        enter = new javax.swing.JButton();
         mes = new javax.swing.JLabel();
         ano = new javax.swing.JLabel();
-        limpar = new javax.swing.JButton();
+        Atualizar = new javax.swing.JButton();
+        remover = new javax.swing.JButton();
+        tirar = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        L = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,78 +64,101 @@ public class Dia_principal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        jButton1.setText("enter");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        enter.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        enter.setText("enter");
+        enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                enterActionPerformed(evt);
             }
         });
 
-        L.setColumns(20);
-        L.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
-        L.setRows(5);
-        jScrollPane1.setViewportView(L);
-
         mes.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        mes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mes.setText("jLabel1");
 
         ano.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        ano.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ano.setText("jLabel2");
 
-        limpar.setText("Limpar");
-        limpar.addActionListener(new java.awt.event.ActionListener() {
+        Atualizar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        Atualizar.setText("Atualizar a lista");
+        Atualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limparActionPerformed(evt);
+                AtualizarActionPerformed(evt);
             }
         });
+
+        remover.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        remover.setText("Remover da lista");
+        remover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removerActionPerformed(evt);
+            }
+        });
+
+        tirar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        tirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tirarActionPerformed(evt);
+            }
+        });
+
+        L.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        jScrollPane2.setViewportView(L);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(431, 431, 431))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(39, 39, 39)
-                        .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(33, 33, 33)
-                        .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(86, 86, 86))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(colocartexto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(colocartexto, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(tirar))
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(73, 73, 73))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
-                                .addComponent(limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addComponent(jScrollPane1))
-                .addGap(4, 4, 4))
+                                .addComponent(enter, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                .addGap(398, 398, 398))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(remover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(20, 20, 20)
+                                .addComponent(Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(60, 60, 60))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addGap(270, 270, 270))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                    .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(colocartexto)
+                    .addComponent(enter, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(colocartexto)
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                .addGap(4, 4, 4))
+                        .addComponent(tirar, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                        .addGap(3, 3, 3))
+                    .addComponent(remover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -143,28 +169,48 @@ public class Dia_principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_colocartextoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
+        // Botão de Adicionar a lista
         int Tamanho = agenda.size();
         texto = colocartexto.getText();
         agenda.add(texto);
         
+         int i;
+        int n = agenda.size();
+       DefaultListModel listModel = new DefaultListModel(); 
+       i=0;
+       for (String percorrer: agenda) {
+               listModel.addElement(i+" "+percorrer);
+               i++;
+            }
+            L.setModel(listModel);
+                                        
         
+    }//GEN-LAST:event_enterActionPerformed
+
+    private void AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarActionPerformed
+        // Botão de Atualizar a Lista
         int i;
         int n = agenda.size();
-        int p;
-        
-        for (i=0; i<n; i++) {
-         L.insert("\n"+agenda.get(i)+"\n", i);
-        
-        
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+       DefaultListModel listModel = new DefaultListModel(); 
+       i=0;
+       for (String percorrer: agenda) {
+               listModel.addElement(i+" "+percorrer);
+               i++;
+            }
+            L.setModel(listModel);
+    }//GEN-LAST:event_AtualizarActionPerformed
 
-    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
-        // TODO add your handling code here:
-        L.setText("");
-    }//GEN-LAST:event_limparActionPerformed
+    private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
+        //Botão de remover da lista
+        int sonumero = Integer.parseInt(tirar.getText());
+        agenda.remove(sonumero);
+    
+    }//GEN-LAST:event_removerActionPerformed
+
+    private void tirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tirarActionPerformed
+        // caixa para adiconar o numero
+    }//GEN-LAST:event_tirarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,14 +248,16 @@ public class Dia_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Atualizar;
     private javax.swing.JLabel D;
-    private javax.swing.JTextArea L;
+    private javax.swing.JList<String> L;
     private javax.swing.JLabel ano;
     private javax.swing.JTextField colocartexto;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton limpar;
+    private javax.swing.JButton enter;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel mes;
+    private javax.swing.JButton remover;
+    private javax.swing.JTextField tirar;
     // End of variables declaration//GEN-END:variables
        public void trocatexto(){
        
@@ -225,7 +273,7 @@ public class Dia_principal extends javax.swing.JFrame {
     AnoFIXO = Integer.parseInt(Ano.format(new Date()));
     MesFIXO = Integer.parseInt(Mes.format(new Date()));
     D.setText("");
-    L.setText(""); 
+    
     //adicionando o texto nas variaveis
     D.setText("Dia "+DiaFIXO);
     mes.setText("Mês "+MesFIXO);
