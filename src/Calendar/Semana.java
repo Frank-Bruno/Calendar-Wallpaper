@@ -626,5 +626,7 @@ public class Semana extends javax.swing.JFrame {
         jLabel5.setText(""+DiaSemana5);
         jLabel6.setText(""+DiaSemana6);
         jLabel7.setText(""+DiaSemana7);
+        
+         
     }
 }
