@@ -5,7 +5,9 @@
  */
 package Calendar;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 
@@ -16,9 +18,10 @@ import java.util.Iterator;
  */
 public class Dia_principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Dia_principal
-     */
+    int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
+    String texto;
+    ArrayList<String> agenda = new ArrayList();
+    
     public Dia_principal() {
         
         initComponents();
@@ -35,51 +38,133 @@ public class Dia_principal extends javax.swing.JFrame {
     private void initComponents() {
 
         D = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        colocartexto = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         L = new javax.swing.JTextArea();
+        mes = new javax.swing.JLabel();
+        ano = new javax.swing.JLabel();
+        limpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        D.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         D.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         D.setText("jLabel1");
-        getContentPane().add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        colocartexto.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        colocartexto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        colocartexto.setText("Digite algo aqui");
+        colocartexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                colocartextoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 110, 190, 50));
 
-        jButton1.setText("jButton1");
+        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        jButton1.setText("enter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
 
         L.setColumns(20);
+        L.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         L.setRows(5);
         jScrollPane1.setViewportView(L);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        mes.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        mes.setText("jLabel1");
+
+        ano.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        ano.setText("jLabel2");
+
+        limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(39, 39, 39)
+                        .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(33, 33, 33)
+                        .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(86, 86, 86))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(colocartexto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(73, 73, 73))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(148, 148, 148)
+                                .addComponent(limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jScrollPane1))
+                .addGap(4, 4, 4))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(colocartexto)
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                .addGap(4, 4, 4))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void colocartextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colocartextoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        
+    }//GEN-LAST:event_colocartextoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        int Tamanho = agenda.size();
+        texto = colocartexto.getText();
+        agenda.add(texto);
+        
+        
+        int i;
+        int n = agenda.size();
+        int p;
+        
+        for (i=0; i<n; i++) {
+         L.insert("\n"+agenda.get(i)+"\n", i);
+        
+        
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+        // TODO add your handling code here:
+        L.setText("");
+    }//GEN-LAST:event_limparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,30 +204,33 @@ public class Dia_principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel D;
     private javax.swing.JTextArea L;
+    private javax.swing.JLabel ano;
+    private javax.swing.JTextField colocartexto;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton limpar;
+    private javax.swing.JLabel mes;
     // End of variables declaration//GEN-END:variables
        public void trocatexto(){
-          // [ A ] declarando e instanciando uma agenda de contatos
-    ArrayList<String> agenda = new ArrayList();
-
-    // [ B ] usando o método add() para gravar 4 contatos na agenda
+       
     agenda.add("Juca Bala;11 1111-1111");
     agenda.add("Marcos Paqueta;22 2222-2222");
     agenda.add("Maria Antonieta;33 3333-3333");
     agenda.add("Antônio Conselheiro;44 4444-4444");
-
-     D.setText("");
-        L.setText(""); 
-        //adicionando o texto nas variaveis
-        D.setText("");
-    int i;
-    int n = agenda.size();
-    for (i=0; i<n; i++) {
-      L.insert("\n"+agenda.get(i)+" \n", i);
-      
-    }
+    SimpleDateFormat Dia = new SimpleDateFormat("dd");
+    SimpleDateFormat Mes = new SimpleDateFormat("MM");
+    SimpleDateFormat Ano = new SimpleDateFormat("YY");
+       
+    DiaFIXO = Integer.parseInt(Dia.format(new Date()));
+    AnoFIXO = Integer.parseInt(Ano.format(new Date()));
+    MesFIXO = Integer.parseInt(Mes.format(new Date()));
+    D.setText("");
+    L.setText(""); 
+    //adicionando o texto nas variaveis
+    D.setText("Dia "+DiaFIXO);
+    mes.setText("Mês "+MesFIXO);
+    ano.setText("Ano "+AnoFIXO);
+    
        
        
        }
