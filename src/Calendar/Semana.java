@@ -281,6 +281,9 @@ public class Semana extends javax.swing.JFrame {
         h3.setText("Hora");
         jPanel4.add(h3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 62, 110));
 
+        jScrollPane1.setOpaque(false);
+
+        T3.setToolTipText("");
         T3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         T3.setOpaque(false);
         jScrollPane1.setViewportView(T3);
