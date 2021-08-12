@@ -9,12 +9,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 
 /**
  *
  * @author joaod
  */
 public class Semana extends javax.swing.JFrame {
+    public static Semana menu;
     //instanciando a agenda
     agenda agenda = new agenda();
     //variaveis que serão usadas depois da criação dos objetos swing
@@ -23,6 +25,7 @@ public class Semana extends javax.swing.JFrame {
     int valorselecao = 0;
      
     public Semana() {
+        super("Semana");
         //intanciando a classe Utilidades
         Utilidades u = new Utilidades();
         //aplicando os metodos na classe semana
@@ -44,6 +47,7 @@ public class Semana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BD1 = new javax.swing.JButton();
         Fechar = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -87,6 +91,15 @@ public class Semana extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1075, 300));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BD1.setBorder(null);
+        BD1.setContentAreaFilled(false);
+        BD1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BD1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 150, 150));
 
         Fechar.setBackground(new java.awt.Color(0, 0, 0));
         Fechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Calendar/imag/Fechar.png"))); // NOI18N
@@ -417,6 +430,14 @@ public class Semana extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_FecharActionPerformed
 
+    private void BD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BD1ActionPerformed
+        // TODO add your handling code here:
+        Dia_principal Dia_principal = new Dia_principal();
+        Dia_principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Dia_principal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BD1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -454,6 +475,7 @@ public class Semana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BD1;
     private javax.swing.JButton Fechar;
     public javax.swing.JLabel T;
     public javax.swing.JLabel T1;

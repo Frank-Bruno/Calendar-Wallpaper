@@ -46,12 +46,15 @@ public class Dia_principal extends javax.swing.JFrame {
         tirar = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         L = new javax.swing.JList<>();
+        voltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         D.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         D.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         D.setText("jLabel1");
+        getContentPane().add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 86, 104));
 
         colocartexto.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         colocartexto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -61,6 +64,7 @@ public class Dia_principal extends javax.swing.JFrame {
                 colocartextoActionPerformed(evt);
             }
         });
+        getContentPane().add(colocartexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 114, 175, 74));
 
         enter.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         enter.setText("enter");
@@ -69,14 +73,17 @@ public class Dia_principal extends javax.swing.JFrame {
                 enterActionPerformed(evt);
             }
         });
+        getContentPane().add(enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 114, 98, 74));
 
         mes.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         mes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mes.setText("jLabel1");
+        getContentPane().add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 0, 86, 104));
 
         ano.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         ano.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ano.setText("jLabel2");
+        getContentPane().add(ano, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 0, 86, 104));
 
         Atualizar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         Atualizar.setText("Atualizar a lista");
@@ -85,6 +92,7 @@ public class Dia_principal extends javax.swing.JFrame {
                 AtualizarActionPerformed(evt);
             }
         });
+        getContentPane().add(Atualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 208, 199, 59));
 
         remover.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         remover.setText("Remover da lista");
@@ -93,6 +101,7 @@ public class Dia_principal extends javax.swing.JFrame {
                 removerActionPerformed(evt);
             }
         });
+        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 208, 217, 59));
 
         tirar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         tirar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,64 +109,21 @@ public class Dia_principal extends javax.swing.JFrame {
                 tirarActionPerformed(evt);
             }
         });
+        getContentPane().add(tirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 208, 175, 56));
 
         L.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jScrollPane2.setViewportView(L);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(431, 431, 431))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(colocartexto, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(tirar))
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(enter, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                                .addGap(398, 398, 398))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(remover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(20, 20, 20)
-                                .addComponent(Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(60, 60, 60))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addGap(270, 270, 270))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                    .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(colocartexto)
-                    .addComponent(enter, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tirar, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                        .addGap(3, 3, 3))
-                    .addComponent(remover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                .addGap(37, 37, 37))
-        );
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 298, 411, 154));
+
+        voltar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        voltar.setText("Voltar");
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,6 +172,12 @@ public class Dia_principal extends javax.swing.JFrame {
         // caixa para adiconar o numero
     }//GEN-LAST:event_tirarActionPerformed
 
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        // TODO add your handling code here:
+        Semana.menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_voltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -252,6 +224,7 @@ public class Dia_principal extends javax.swing.JFrame {
     private javax.swing.JLabel mes;
     private javax.swing.JButton remover;
     private javax.swing.JTextField tirar;
+    private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
        public void trocatexto(){
        
