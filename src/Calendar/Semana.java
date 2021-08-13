@@ -5,6 +5,7 @@
  */
 package Calendar;
 
+import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -18,12 +19,12 @@ import javax.swing.JFrame;
 public class Semana extends javax.swing.JFrame {
     public static Semana semana;
     //instanciando a agenda
-    agenda agenda = new agenda();
+    Dia_principal Dia_principal = new Dia_principal();
     //variaveis que serão usadas depois da criação dos objetos swing
     int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
     int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
     int valorselecao = 0;
-     
+    int g;
     public Semana() {
         super("Semana");
         //intanciando a classe Utilidades
@@ -432,10 +433,21 @@ public class Semana extends javax.swing.JFrame {
 
     private void BD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BD1ActionPerformed
         // TODO add your handling code here:
-        Dia_principal Dia_principal = new Dia_principal();
-        Dia_principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        int i;
+        int n;
+        
+            DefaultListModel listModel = new DefaultListModel(); 
+        
+            n = Dia_principal.agenda.tamanho();
+        for (i=0;i<n;i++) {
+               listModel.addElement(i+" "+Dia_principal.agenda.texto1(i));
+            }
+            T3.setModel(listModel);
         Dia_principal.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
+        this.repaint();
+        this.semana.validate();
+        
     }//GEN-LAST:event_BD1ActionPerformed
 
     /**
@@ -653,22 +665,22 @@ public class Semana extends javax.swing.JFrame {
         jLabel5.setText(""+DiaSemana5);
         jLabel6.setText(""+DiaSemana6);
         jLabel7.setText(""+DiaSemana7);
-        //limpa o texto das variaveis
-        T.setText("");
-        T1.setText("");
-        T2.setText("");
         
-        DefaultListModel listModel = new DefaultListModel(); 
         int i;
-        int n = agenda.tamanho();
+        int n;
+        
+            DefaultListModel listModel = new DefaultListModel(); 
+        
+            n = Dia_principal.agenda.tamanho();
         for (i=0;i<n;i++) {
-               listModel.addElement(i+" "+agenda.texto1(i));
+               listModel.addElement(i+" "+Dia_principal.agenda.texto1(i));
             }
             T3.setModel(listModel);
-        T4.setText("");
-        T5.setText("");
-        T6.setText("");
-        //adicionando o texto nas variaveis
+        
+        
+        
+        
+       
         
     }
 }
