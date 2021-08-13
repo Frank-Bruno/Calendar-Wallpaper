@@ -94,13 +94,15 @@ public class Semana extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BD1.setBorder(null);
+        BD1.setBorderPainted(false);
         BD1.setContentAreaFilled(false);
+        BD1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BD1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BD1ActionPerformed(evt);
             }
         });
-        getContentPane().add(BD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 150, 150));
+        getContentPane().add(BD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 60, 100));
 
         Fechar.setBackground(new java.awt.Color(0, 0, 0));
         Fechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Calendar/imag/Fechar.png"))); // NOI18N
@@ -302,7 +304,7 @@ public class Semana extends javax.swing.JFrame {
         T3.setOpaque(false);
         jScrollPane1.setViewportView(T3);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 40, 84, 110));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 30, 80, 120));
 
         jPanel8.add(jPanel4);
 
