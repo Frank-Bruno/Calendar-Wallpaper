@@ -8,8 +8,13 @@ public class Principal{
        
        //instancia a classe resolução
        resolucao r = new resolucao();
+       //instacia a classe Mes
+       Mes Mes = new Mes();
+       //instacia a classe Dia_principal
+       Dia_principal Dia_principal = new Dia_principal();
        //instancia a classe Semana
        semana = new Semana();
+       Ano Ano = new Ano();
        /* usando o comando getLar é usado a largura da tela que a classe semana calculou 
        menos a largura do jframe da classe semana*/
        int x = r.getLar() - semana.getWidth();
