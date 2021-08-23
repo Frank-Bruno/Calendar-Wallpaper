@@ -1,11 +1,15 @@
 //comente
 package Calendar;
 
+import DatabaseConnection.Conexao;
 // Classe principal do projeto
 public class Principal{
     public static Semana semana;
     public static void main(String args[]) {
-       
+       //instanciando a conexao
+       Conexao Conexao = new Conexao();
+       //conctando ao banco de dados
+       Conexao.Conectar();
        //instancia a classe resolução
        resolucao r = new resolucao();
        //instacia a classe Mes
