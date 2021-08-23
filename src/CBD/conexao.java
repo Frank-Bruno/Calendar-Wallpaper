@@ -1,4 +1,4 @@
-package exemplos;
+package CBD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,7 +30,7 @@ public conexao() {
   hostName = "localhost";
   userName = "portaljava";
   password = "java rulez!";
-  jdbcDriver = "org.gjt.mm.mysql.Driver";
+  jdbcDriver = "com.mysql.jdbc.Driver";
   dataBaseName = "meu_bd";
   dataBasePrefix = "jdbc: mysql:/";
   dabaBasePort = "3306";
