@@ -4,6 +4,7 @@ package Calendar;
 import DatabaseConnection.Conexao;
 // Classe principal do projeto
 public class Principal{
+    public static Mes mes;
     public static Semana semana;
     public static void main(String args[]) {
        //instanciando a conexao
@@ -13,7 +14,7 @@ public class Principal{
        //instancia a classe resolução
        resolucao r = new resolucao();
        //instacia a classe Mes
-       Mes Mes = new Mes();
+       mes = new Mes();
        //instacia a classe Dia_principal
        Dia_principal Dia_principal = new Dia_principal();
        //instancia a classe Semana
