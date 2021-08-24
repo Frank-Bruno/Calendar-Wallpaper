@@ -10,7 +10,8 @@ package Calendar;
  * @author joaod
  */
 public class dia_hoje {
-    private int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
+
+    private int AnoFIXO = 0, MesFIXO = 0,DiaFIXO = 0;
     public dia_hoje(){
     
     DiaFIXO = Principal.mes.jCalendar1.getDayChooser().getDay();

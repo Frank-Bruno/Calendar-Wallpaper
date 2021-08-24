@@ -15,7 +15,7 @@ import javax.swing.DefaultListModel;
  */
 public class Dia_principal extends javax.swing.JFrame {
 
-    dia_hoje dia_hoje = new dia_hoje();
+    
     
     String texto;
     
@@ -308,13 +308,16 @@ public class Dia_principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     public void trocatexto(){
     //adicionando o texto nas variaveis
-    D.setText("Dia "+dia_hoje.DiaFixo());
-    mes.setText("Mês "+dia_hoje.MesFixo());
-    ano.setText("Ano "+dia_hoje.AnoFixo());
-    
+    D.setText("Dia "+Principal.dia_hoje.DiaFixo());
+    mes.setText("Mês "+Principal.dia_hoje.MesFixo());
+    ano.setText("Ano "+Principal.dia_hoje.AnoFixo());
+    //atualizando a lista para ver no jList dentro do Jframe do dia
+    int i;
+    int n = Principal.agenda.tamanho();
+    DefaultListModel listModel = new DefaultListModel(); 
+    for (i=0;i<n;i++) {
+               listModel.addElement(i+" "+Principal.agenda.texto1(i));
+            }
+            L.setModel(listModel);
     }
-    
-        
-        
-
 }

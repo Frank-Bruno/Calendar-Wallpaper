@@ -11,11 +11,13 @@ package Calendar;
  */
 public class Mes extends javax.swing.JFrame {
 
+    private int fet, fot;
     /**
      * Creates new form Mes
      */
     public Mes() {
         initComponents();
+//        fazer_atualizar();
     }
 
     /**
@@ -84,4 +86,15 @@ public class Mes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public com.toedter.calendar.JCalendar jCalendar1;
     // End of variables declaration//GEN-END:variables
+    /* public void fazer_atualizar(){
+        fet = jCalendar1.getDayChooser().getDay();
+        fot = Integer.parseInt(Principal.Dia_principal.getText1());
+    while(fet != fot){
+        Principal.Dia_principal.dispose();
+        Principal.Dia_principal = new Dia_principal();
+        Principal.Dia_principal.setVisible(true);
+    }
+    
+    
+    }*/
 }
