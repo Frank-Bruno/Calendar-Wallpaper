@@ -673,5 +673,8 @@ public class Semana extends javax.swing.JFrame {
         int y = 1;
         // seta a localização do jframe da classe semana
         this.setLocation(x, y);
+        
+        
+        
 }
 }
