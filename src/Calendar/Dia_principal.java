@@ -5,7 +5,6 @@
  */
 package Calendar;
 
-import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 
 
@@ -17,7 +16,7 @@ import javax.swing.DefaultListModel;
 public class Dia_principal extends javax.swing.JFrame {
 
     dia_hoje dia_hoje = new dia_hoje();
-    agenda agenda = new agenda();
+    
     String texto;
     
     
@@ -196,16 +195,16 @@ public class Dia_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_colocartextoActionPerformed
 
     private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
-        // Botão de Adicionar a lista
+       // Botão de Adicionar a lista
         
-        texto = colocartexto.getText();
-        agenda.adicionar(texto);
-        
+       texto = colocartexto.getText();
+       Principal.agenda.adicionar(texto);
+       //atualizando a lista para ver no jList dentro do Jframe do dia
        int i;
-       int n = agenda.tamanho();
+       int n = Principal.agenda.tamanho();
        DefaultListModel listModel = new DefaultListModel(); 
        for (i=0;i<n;i++) {
-               listModel.addElement(i+" "+agenda.texto1(i));
+               listModel.addElement(i+" "+Principal.agenda.texto1(i));
             }
             L.setModel(listModel);
                                         
@@ -214,19 +213,29 @@ public class Dia_principal extends javax.swing.JFrame {
 
     private void AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarActionPerformed
         // Botão de Atualizar a Lista
+        //atualizando a lista para ver no jList dentro do Jframe do dia
         int i;
-        int n = agenda.tamanho();
+        int n = Principal.agenda.tamanho();
        DefaultListModel listModel = new DefaultListModel(); 
        for (i=0;i<n;i++) {
-               listModel.addElement(i+" "+agenda.texto1(i));
+               listModel.addElement(i+" "+Principal.agenda.texto1(i));
             }
             L.setModel(listModel);
     }//GEN-LAST:event_AtualizarActionPerformed
 
     private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
         //Botão de remover da lista
+        
         int sonumero = Integer.parseInt(tirar.getText());
-        agenda.remover(sonumero);
+        Principal.agenda.remover(sonumero);
+        //atualizando a lista para ver no jList dentro do Jframe do dia
+        int i;
+        int n = Principal.agenda.tamanho();
+       DefaultListModel listModel = new DefaultListModel(); 
+       for (i=0;i<n;i++) {
+               listModel.addElement(i+" "+Principal.agenda.texto1(i));
+            }
+            L.setModel(listModel);
     
     }//GEN-LAST:event_removerActionPerformed
 
@@ -236,15 +245,15 @@ public class Dia_principal extends javax.swing.JFrame {
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
-        Principal.semana.repaint();
-        Principal.semana.validate();
-        Principal.semana.setVisible(true);
+        atualizar_Jframe atu = new atualizar_Jframe();
+        atu.atualizar();
+        Principal.mes.setVisible(false);
         this.setVisible(false);
     }//GEN-LAST:event_voltarActionPerformed
 
     private void vercalendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vercalendarioActionPerformed
         // TODO add your handling code here:
-        Principal.mes.setLocation( vercalendario.getX(), vercalendario.getY());
+        Principal.mes.setLocation( vercalendario.getLocationOnScreen());
         Principal.mes.setVisible(true);
     }//GEN-LAST:event_vercalendarioActionPerformed
 
@@ -297,18 +306,13 @@ public class Dia_principal extends javax.swing.JFrame {
     private javax.swing.JButton vercalendario;
     private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
-       public void trocatexto(){
-       
-    
-    
+    public void trocatexto(){
     //adicionando o texto nas variaveis
     D.setText("Dia "+dia_hoje.DiaFixo());
     mes.setText("Mês "+dia_hoje.MesFixo());
     ano.setText("Ano "+dia_hoje.AnoFixo());
     
-       
-       
-       }
+    }
     
         
         

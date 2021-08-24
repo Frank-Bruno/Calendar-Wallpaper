@@ -6,6 +6,8 @@ import DatabaseConnection.Conexao;
 public class Principal{
     public static Mes mes;
     public static Semana semana;
+    public static Dia_principal Dia_principal;
+    public static agenda agenda;
     public static void main(String args[]) {
        //instacia a classe Mes
        mes = new Mes();
@@ -13,11 +15,13 @@ public class Principal{
        Conexao Conexao = new Conexao();
        //conctando ao banco de dados
        Conexao.Conectar();
+       //cria a agenda
+       agenda = new agenda();
        //instancia a classe resolução
        resolucao r = new resolucao();
        
        //instacia a classe Dia_principal
-       Dia_principal Dia_principal = new Dia_principal();
+       Dia_principal = new Dia_principal();
        //instancia a classe Semana
        semana = new Semana();
        Ano Ano = new Ano();
@@ -29,6 +33,7 @@ public class Principal{
        semana.setLocation(x, y);
        // torna o jframe da classe semana visivel
        semana.setVisible(true);
+       
  
          
 

@@ -5,21 +5,19 @@
  */
 package Calendar;
 
-import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
 
 /**
  *
  * @author joaod
  */
 public class Semana extends javax.swing.JFrame {
+    
+    
     public static Semana semana;
-    //instanciando a agenda
-    Dia_principal Dia_principal = new Dia_principal();
     //variaveis que serão usadas depois da criação dos objetos swing
     int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
     int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
@@ -31,7 +29,9 @@ public class Semana extends javax.swing.JFrame {
         Utilidades u = new Utilidades();
         //aplicando os metodos na classe semana
         u.utilidade(this);
-        
+        /* usando o comando getLar é usado a largura da tela que a classe semana calculou 
+       menos a largura do jframe da classe semana*/
+       
         initComponents();
         //iniciando os metodos criandos nessa classe
         iniciocalendario();
@@ -435,21 +435,8 @@ public class Semana extends javax.swing.JFrame {
 
     private void BD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BD1ActionPerformed
         // TODO add your handling code here:
-        int i;
-        int n;
-        
-            DefaultListModel listModel = new DefaultListModel(); 
-        
-            n = Dia_principal.agenda.tamanho();
-        for (i=0;i<n;i++) {
-               listModel.addElement(i+" "+Dia_principal.agenda.texto1(i));
-            }
-            T3.setModel(listModel);
-        Dia_principal.setVisible(true);
-        this.dispose();
-        this.repaint();
-        this.semana.validate();
-        
+        Principal.Dia_principal.setLocation( BD1.getLocationOnScreen());
+        Principal.Dia_principal.setVisible(true);
     }//GEN-LAST:event_BD1ActionPerformed
 
     /**
@@ -480,12 +467,9 @@ public class Semana extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                semana = new Semana();
-                semana.setVisible(true);
-                
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            semana = new Semana();
+            semana.setVisible(true);
         });
     }
 
@@ -668,21 +652,22 @@ public class Semana extends javax.swing.JFrame {
         jLabel6.setText(""+DiaSemana6);
         jLabel7.setText(""+DiaSemana7);
         
+        //atualizando a lista para ver no jList dentro do Jframe Semana
         int i;
         int n;
         
             DefaultListModel listModel = new DefaultListModel(); 
         
-            n = Dia_principal.agenda.tamanho();
+            n = Principal.agenda.tamanho();
         for (i=0;i<n;i++) {
-               listModel.addElement(i+" "+Dia_principal.agenda.texto1(i));
+               listModel.addElement(i+" "+Principal.agenda.texto1(i));
             }
             T3.setModel(listModel);
         
-        
-        
-        
-       
-        
-    }
+        resolucao r = new resolucao();
+        int x = r.getLar() - this.getWidth();
+        int y = 1;
+        // seta a localização do jframe da classe semana
+        this.setLocation(x, y);
+}
 }
