@@ -7,6 +7,7 @@ package Calendar;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -15,14 +16,10 @@ import java.util.Date;
 public class dia_hoje {
     private int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
     public dia_hoje(){
-    SimpleDateFormat Dia = new SimpleDateFormat("dd");
-    SimpleDateFormat Mes = new SimpleDateFormat("MM");
-    SimpleDateFormat Ano = new SimpleDateFormat("YYYY");
-       
-    DiaFIXO = Integer.parseInt(Dia.format(new Date()));
-    AnoFIXO = Integer.parseInt(Ano.format(new Date()));
-    MesFIXO = Integer.parseInt(Mes.format(new Date()));
     
+    DiaFIXO = Principal.mes.jCalendar1.getDayChooser().getDay();
+    AnoFIXO = Principal.mes.jCalendar1.getYearChooser().getYear();
+    MesFIXO = Principal.mes.jCalendar1.getMonthChooser().getMonth();
     
        }
     public int DiaFixo(){

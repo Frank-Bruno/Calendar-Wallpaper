@@ -7,14 +7,15 @@ public class Principal{
     public static Mes mes;
     public static Semana semana;
     public static void main(String args[]) {
+       //instacia a classe Mes
+       mes = new Mes();
        //instanciando a conexao
        Conexao Conexao = new Conexao();
        //conctando ao banco de dados
        Conexao.Conectar();
        //instancia a classe resolução
        resolucao r = new resolucao();
-       //instacia a classe Mes
-       mes = new Mes();
+       
        //instacia a classe Dia_principal
        Dia_principal Dia_principal = new Dia_principal();
        //instancia a classe Semana

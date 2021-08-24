@@ -82,6 +82,6 @@ public class Mes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JCalendar jCalendar1;
+    public com.toedter.calendar.JCalendar jCalendar1;
     // End of variables declaration//GEN-END:variables
 }

@@ -50,12 +50,10 @@ public class Dia_principal extends javax.swing.JFrame {
         vercalendario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         D.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         D.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         D.setText("jLabel1");
-        getContentPane().add(D, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 81, 104));
 
         colocartexto.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         colocartexto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -65,7 +63,6 @@ public class Dia_principal extends javax.swing.JFrame {
                 colocartextoActionPerformed(evt);
             }
         });
-        getContentPane().add(colocartexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 114, 175, 74));
 
         enter.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         enter.setText("enter");
@@ -74,17 +71,14 @@ public class Dia_principal extends javax.swing.JFrame {
                 enterActionPerformed(evt);
             }
         });
-        getContentPane().add(enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 114, 98, 74));
 
         mes.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         mes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mes.setText("jLabel1");
-        getContentPane().add(mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 0, 81, 104));
 
         ano.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         ano.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ano.setText("jLabel2");
-        getContentPane().add(ano, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 0, 84, 104));
 
         Atualizar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         Atualizar.setText("Atualizar a lista");
@@ -93,7 +87,6 @@ public class Dia_principal extends javax.swing.JFrame {
                 AtualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(Atualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 208, 249, 59));
 
         remover.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         remover.setText("Remover da lista");
@@ -102,7 +95,6 @@ public class Dia_principal extends javax.swing.JFrame {
                 removerActionPerformed(evt);
             }
         });
-        getContentPane().add(remover, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 208, 267, 59));
 
         tirar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         tirar.addActionListener(new java.awt.event.ActionListener() {
@@ -110,12 +102,9 @@ public class Dia_principal extends javax.swing.JFrame {
                 tirarActionPerformed(evt);
             }
         });
-        getContentPane().add(tirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 208, 75, 56));
 
         L.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jScrollPane2.setViewportView(L);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 298, 411, 154));
 
         voltar.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         voltar.setText("Voltar");
@@ -124,7 +113,6 @@ public class Dia_principal extends javax.swing.JFrame {
                 voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 40, 105, -1));
 
         vercalendario.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         vercalendario.setText("Calendário");
@@ -133,7 +121,71 @@ public class Dia_principal extends javax.swing.JFrame {
                 vercalendarioActionPerformed(evt);
             }
         });
-        getContentPane().add(vercalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6)
+                .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6)
+                .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(290, 290, 290)
+                .addComponent(voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(59, 59, 59))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(colocartexto, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                        .addGap(10, 10, 10)
+                        .addComponent(enter, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                        .addGap(97, 97, 97)
+                        .addComponent(vercalendario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(98, 98, 98))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tirar)
+                        .addGap(10, 10, 10)
+                        .addComponent(remover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(20, 20, 20)
+                        .addComponent(Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addGap(210, 210, 210)))
+                .addGap(71, 71, 71))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(D, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(voltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(29, 29, 29)))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(colocartexto)
+                    .addComponent(enter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(vercalendario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(33, 33, 33)))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tirar)
+                        .addGap(3, 3, 3))
+                    .addComponent(remover, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                    .addComponent(Atualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                .addGap(52, 52, 52))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,8 +244,6 @@ public class Dia_principal extends javax.swing.JFrame {
 
     private void vercalendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vercalendarioActionPerformed
         // TODO add your handling code here:
-        Principal.mes.revalidate();
-        Principal.mes.validate();
         Principal.mes.setLocation( vercalendario.getX(), vercalendario.getY());
         Principal.mes.setVisible(true);
     }//GEN-LAST:event_vercalendarioActionPerformed
