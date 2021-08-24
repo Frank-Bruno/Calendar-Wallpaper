@@ -435,8 +435,10 @@ public class Semana extends javax.swing.JFrame {
 
     private void BD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BD1ActionPerformed
         // TODO add your handling code here:
+        
         int x_val = (int) Math.round(BD1.getLocationOnScreen().getX());
         int y_val = (int) Math.round(BD1.getLocationOnScreen().getY());
+        
         Principal.Dia_principal.setLocation(x_val/2,y_val/2);
         Principal.Dia_principal.setVisible(true);
     }//GEN-LAST:event_BD1ActionPerformed
@@ -537,19 +539,19 @@ public class Semana extends javax.swing.JFrame {
         data5.setText("");
         data6.setText("");
         //adicionando o texto nas variaveis
-        data.setText(""+(Principal.dia_hoje.DiaFixo() - 3));
-        data1.setText(""+(Principal.dia_hoje.DiaFixo() - 2));
-        data2.setText(""+(Principal.dia_hoje.DiaFixo() - 1));
-        data3.setText(""+Principal.dia_hoje.DiaFixo());
-        data4.setText(""+(Principal.dia_hoje.DiaFixo() + 1));
-        data5.setText(""+(Principal.dia_hoje.DiaFixo() + 2));
-        data6.setText(""+(Principal.dia_hoje.DiaFixo() + 3));
+        data.setText(""+(Principal.Dia_principal.dia_hoje.DiaFixo() - 3));
+        data1.setText(""+(Principal.Dia_principal.dia_hoje.DiaFixo() - 2));
+        data2.setText(""+(Principal.Dia_principal.dia_hoje.DiaFixo() - 1));
+        data3.setText(""+Principal.Dia_principal.dia_hoje.DiaFixo());
+        data4.setText(""+(Principal.Dia_principal.dia_hoje.DiaFixo() + 1));
+        data5.setText(""+(Principal.Dia_principal.dia_hoje.DiaFixo() + 2));
+        data6.setText(""+(Principal.Dia_principal.dia_hoje.DiaFixo() + 3));
         
         
         
-        DiaAltera = Principal.dia_hoje.DiaFixo();
-        MesAltera = Principal.dia_hoje.MesFixo();
-        AnoAltera = Principal.dia_hoje.AnoFixo();
+        DiaAltera = Principal.Dia_principal.dia_hoje.DiaFixo();
+        MesAltera = Principal.Dia_principal.dia_hoje.MesFixo();
+        AnoAltera = Principal.Dia_principal.dia_hoje.AnoFixo();
         
         Calendar calendar = Calendar.getInstance();
         calendar.set(AnoAltera, MesAltera, DiaAltera);

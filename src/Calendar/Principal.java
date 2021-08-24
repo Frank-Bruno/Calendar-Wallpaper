@@ -8,21 +8,22 @@ public class Principal{
     public static Semana semana;
     public static Dia_principal Dia_principal;
     public static agenda agenda;
-    public static dia_hoje dia_hoje;
+    //public static dia_hoje dia_hoje;
+    
     public static void main(String args[]) {
+       
        //instacia a classe Mes
        mes = new Mes();
        //instanciando a conexao
        Conexao Conexao = new Conexao();
        //conctando ao banco de dados
        Conexao.Conectar();
-       //criar o dia de hoje
-       dia_hoje = new dia_hoje();
        //cria a agenda
        agenda = new agenda();
        //instancia a classe resolução
        resolucao r = new resolucao();
-       
+       //criar o dia de hoje
+       //dia_hoje = new dia_hoje(); 
        //instacia a classe Dia_principal
        Dia_principal = new Dia_principal();
        //instancia a classe Semana

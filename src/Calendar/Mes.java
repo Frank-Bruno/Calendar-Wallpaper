@@ -5,21 +5,26 @@
  */
 package Calendar;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
 /**
  *
  * @author joaod
  */
 public class Mes extends javax.swing.JFrame {
 
-    private int fet, fot;
+    
     /**
      * Creates new form Mes
      */
     public Mes() {
         initComponents();
-//        fazer_atualizar();
-    }
+        novo();
 
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -86,15 +91,32 @@ public class Mes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public com.toedter.calendar.JCalendar jCalendar1;
     // End of variables declaration//GEN-END:variables
-    /* public void fazer_atualizar(){
-        fet = jCalendar1.getDayChooser().getDay();
-        fot = Integer.parseInt(Principal.Dia_principal.getText1());
-    while(fet != fot){
-        Principal.Dia_principal.dispose();
-        Principal.Dia_principal = new Dia_principal();
-        Principal.Dia_principal.setVisible(true);
-    }
+   
+    //método que quando clicado em um dia no JCalendar ele atualiza tudo
+    public void novo(){
+       
+   jCalendar1.getDayChooser().addPropertyChangeListener("day", new PropertyChangeListener() {
+            
+            @Override
+            public void propertyChange(PropertyChangeEvent e) {
+                
+                int x_valor = (int) Math.round(Principal.Dia_principal.getLocationOnScreen().getX());
+                int y_valor = (int) Math.round(Principal.Dia_principal.getLocationOnScreen().getY());
+                atualizar_Jframe atu = new atualizar_Jframe();
+                atu.atualizar();
+                Principal.Dia_principal.setLocation(x_valor,y_valor);
+                Principal.Dia_principal.setVisible(true);
+                Principal.semana.setVisible(true);
+                Principal.mes.setVisible(false);
+            }
+        });     
+   }
+        
+        
+       
+       
     
     
-    }*/
+    
 }
+

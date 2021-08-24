@@ -16,8 +16,8 @@ import javax.swing.DefaultListModel;
 public class Dia_principal extends javax.swing.JFrame {
 
     
-    
-    String texto;
+    public dia_hoje dia_hoje = new dia_hoje(); 
+    private String texto;
     
     
     public Dia_principal() {
@@ -247,6 +247,7 @@ public class Dia_principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         atualizar_Jframe atu = new atualizar_Jframe();
         atu.atualizar();
+        Principal.semana.setVisible(true);
         Principal.mes.setVisible(false);
         this.setVisible(false);
     }//GEN-LAST:event_voltarActionPerformed
@@ -307,10 +308,13 @@ public class Dia_principal extends javax.swing.JFrame {
     private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
     public void trocatexto(){
+    D.setText("");
+    mes.setText("");
+    ano.setText("");
     //adicionando o texto nas variaveis
-    D.setText("Dia "+Principal.dia_hoje.DiaFixo());
-    mes.setText("Mês "+Principal.dia_hoje.MesFixo());
-    ano.setText("Ano "+Principal.dia_hoje.AnoFixo());
+    D.setText("Dia "+dia_hoje.DiaFixo());
+    mes.setText("Mês "+(dia_hoje.MesFixo()+1));
+    ano.setText("Ano "+dia_hoje.AnoFixo());
     //atualizando a lista para ver no jList dentro do Jframe do dia
     int i;
     int n = Principal.agenda.tamanho();

@@ -11,11 +11,11 @@ package Calendar;
  */
 public class atualizar_Jframe {
     public void atualizar(){
-        Principal.semana.dispose();
-        Principal.semana = new Semana();
-        Principal.semana.setVisible(true);
         Principal.Dia_principal.dispose();
         Principal.Dia_principal = new Dia_principal();
+        Principal.semana.dispose();
+        Principal.semana = new Semana();
+        
     }
     
 }
