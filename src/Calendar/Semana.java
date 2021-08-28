@@ -19,9 +19,7 @@ public class Semana extends javax.swing.JFrame {
     
     public static Semana semana;
     //variaveis que serão usadas depois da criação dos objetos swing
-    int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0;
-    int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
-    int valorselecao = 0;
+    
     int g;
     public Semana() {
         super("Semana");
@@ -29,12 +27,8 @@ public class Semana extends javax.swing.JFrame {
         Utilidades u = new Utilidades();
         //aplicando os metodos na classe semana
         u.utilidade(this);
-        /* usando o comando getLar é usado a largura da tela que a classe semana calculou 
-       menos a largura do jframe da classe semana*/
-       
         initComponents();
         //iniciando os metodos criandos nessa classe
-        iniciocalendario();
         calendario();
         
     }
@@ -519,16 +513,6 @@ public class Semana extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    public void iniciocalendario(){
-        SimpleDateFormat Dia = new SimpleDateFormat("dd");
-        SimpleDateFormat Mes = new SimpleDateFormat("MM");
-        SimpleDateFormat Ano = new SimpleDateFormat("YY");
-       
-        DiaFIXO = Integer.parseInt(Dia.format(new Date()));
-        AnoFIXO = Integer.parseInt(Ano.format(new Date()));
-        MesFIXO = Integer.parseInt(Mes.format(new Date()));
-        
-    }
     public void calendario(){
         //limpa o texto das variaveis
         data.setText("");
@@ -549,12 +533,10 @@ public class Semana extends javax.swing.JFrame {
         
         
         
-        DiaAltera = Principal.Dia_principal.dia_hoje.DiaFixo();
-        MesAltera = Principal.Dia_principal.dia_hoje.MesFixo();
-        AnoAltera = Principal.Dia_principal.dia_hoje.AnoFixo();
+        
         
         Calendar calendar = Calendar.getInstance();
-        calendar.set(AnoAltera, MesAltera, DiaAltera);
+        calendar.set(Principal.Dia_principal.dia_hoje.AnoFixo(), Principal.Dia_principal.dia_hoje.MesFixo(), Principal.Dia_principal.dia_hoje.DiaFixo());
         int SetaDia = 0;
         String DiaSemana1 = null;
         String DiaSemana2 = null;
@@ -669,6 +651,9 @@ public class Semana extends javax.swing.JFrame {
             T3.setModel(listModel);
         
         resolucao r = new resolucao();
+        /* usando o comando getLar é usado a largura da tela 
+        que a classe semana calculou 
+        menos a largura do jframe da classe semana*/
         int x = r.getLar() - this.getWidth();
         int y = 1;
         // seta a localização do jframe da classe semana
