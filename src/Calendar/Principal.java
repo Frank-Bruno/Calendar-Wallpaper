@@ -14,10 +14,6 @@ public class Principal{
        
        //instacia a classe Mes
        mes = new Mes();
-       //instanciando a conexao
-       Conexao Conexao = new Conexao();
-       //conctando ao banco de dados
-       Conexao.Conectar();
        //cria a agenda
        agenda = new agenda();
        //instancia a classe resolução

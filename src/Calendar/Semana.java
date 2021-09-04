@@ -90,7 +90,7 @@ public class Semana extends javax.swing.JFrame {
         BD1.setBorder(null);
         BD1.setBorderPainted(false);
         BD1.setContentAreaFilled(false);
-        BD1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BD1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BD1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BD1ActionPerformed(evt);
@@ -99,7 +99,7 @@ public class Semana extends javax.swing.JFrame {
         getContentPane().add(BD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 60, 100));
 
         Fechar.setBackground(new java.awt.Color(0, 0, 0));
-        Fechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Calendar/imag/Fechar.png"))); // NOI18N
+        Fechar.setIcon(new javax.swing.ImageIcon("C:\\Users\\joaod\\Documents\\2021\\UFPA\\Projetos de Engenharia 2\\RP\\Calendar-Wallpaper\\src\\Calendar\\imag\\Fechar.png")); // NOI18N
         Fechar.setBorder(null);
         Fechar.setBorderPainted(false);
         Fechar.setContentAreaFilled(false);
