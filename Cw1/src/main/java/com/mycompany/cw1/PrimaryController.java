@@ -16,6 +16,6 @@ public class PrimaryController {
     }
     @FXML
     private void abrircalendario() throws IOException {
-        
+         App.setRoot("secondary");
     }
 }

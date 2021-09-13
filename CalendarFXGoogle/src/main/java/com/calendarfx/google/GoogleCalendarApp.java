@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import javafx.stage.StageStyle;
 
 public class GoogleCalendarApp extends Application {
 
@@ -37,10 +38,11 @@ public class GoogleCalendarApp extends Application {
         GoogleCalendarAppView appView = new GoogleCalendarAppView(calendarView);
         appView.getStylesheets().add(CalendarView.class.getResource("calendar.css").toExternalForm());
 
+        primaryStage.initStyle(StageStyle.UNIFIED);
         primaryStage.setTitle("Google Calendar");
         primaryStage.setScene(new Scene(appView));
-        primaryStage.setWidth(1400);
-        primaryStage.setHeight(950);
+        primaryStage.setWidth(840);
+        primaryStage.setHeight(640);
         primaryStage.centerOnScreen();
         primaryStage.show();
     }
