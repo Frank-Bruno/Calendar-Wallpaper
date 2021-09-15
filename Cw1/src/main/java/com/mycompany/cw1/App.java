@@ -1,6 +1,8 @@
 package com.mycompany.cw1;
 
-import com.calendarfx.google.view.GoogleCalendarAppView;
+
+
+import com.calendarfx.google.GoogleCalendarApp;
 import com.calendarfx.view.CalendarView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +11,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import static javafx.application.Application.launch;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
@@ -21,32 +21,24 @@ import javafx.stage.StageStyle;
 public class App extends Application {
 
     private static Scene scene;
-
+    public static Stage primaryStage;
     @Override
     public void start(Stage stage) throws IOException {
+        //wallpaper
         scene = new Scene(loadFXML("primary"), 156, 156);
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
-        
         stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setX(0);
+        stage.setY(0);
         stage.show();
         
-        Stage primaryStage = new Stage();
-        CalendarView calendarView = new CalendarView();
-        calendarView.setToday(LocalDate.now());
-        calendarView.setTime(LocalTime.now());
-        calendarView.setShowDeveloperConsole(Boolean.getBoolean("calendarfx.developer"));
-
-        GoogleCalendarAppView appView = new GoogleCalendarAppView(calendarView);
-        appView.getStylesheets().add(CalendarView.class.getResource("calendar.css").toExternalForm());
-
-        primaryStage.initStyle(StageStyle.UNIFIED);
-        primaryStage.setTitle("Google Calendar");
-        primaryStage.setScene(new Scene(appView));
-        primaryStage.setWidth(840);
-        primaryStage.setHeight(640);
-        primaryStage.centerOnScreen();
-        primaryStage.show();
+        // calendário do google
+        primaryStage = new Stage();
+        GoogleCalendarApp GoogleCalendarApp = new GoogleCalendarApp();
+        GoogleCalendarApp.start(primaryStage);
+        primaryStage.hide();
+        
     }
 
     static void setRoot(String fxml) throws IOException {

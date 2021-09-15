@@ -44,7 +44,6 @@ public class GoogleCalendarApp extends Application {
         primaryStage.setWidth(840);
         primaryStage.setHeight(640);
         primaryStage.centerOnScreen();
-        primaryStage.show();
     }
 
     public static void main(String[] args) {

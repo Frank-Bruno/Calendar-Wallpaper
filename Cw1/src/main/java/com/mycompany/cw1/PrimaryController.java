@@ -13,9 +13,11 @@ public class PrimaryController {
     @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");
+        App.primaryStage.show();
     }
     @FXML
     private void abrircalendario() throws IOException {
          App.setRoot("secondary");
+         App.primaryStage.show();
     }
 }
