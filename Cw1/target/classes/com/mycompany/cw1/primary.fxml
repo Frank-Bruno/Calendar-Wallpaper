@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" opacity="0.69" prefHeight="253.0" prefWidth="269.0" spacing="20.0" style="-fx-background-radius: 50px; -fx-padding: 60px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cw1.PrimaryController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="156.0" style="-fx-background-radius: 10px; -fx-padding: 0px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cw1.PrimaryController">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" onAction="#abrircalendario" text="Switch to Secondary View" />
+      <VBox alignment="CENTER" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="50.0" spacing="20.0" style="-fx-background-radius: 10px; -fx-padding: 0px;">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Label text="Dia" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="104.0" spacing="20.0" style="-fx-background-radius: 10px; -fx-padding: 0px;">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Label onMouseClicked="#switchToSecondary" text="Primary View" />
+         </children>
+      </VBox>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+   <effect>
+      <Blend mode="DARKEN" />
+   </effect>
+</HBox>
