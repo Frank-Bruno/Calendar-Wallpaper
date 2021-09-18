@@ -6,22 +6,22 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="156.0" style="-fx-background-radius: 10px; -fx-padding: 0px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cw1.PrimaryController">
+<HBox fx:id="hbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="156.0" style="-fx-background-radius: 10px; -fx-padding: 0px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.cw1.PrimaryController">
    <children>
-      <VBox alignment="CENTER" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="50.0" spacing="20.0" style="-fx-background-radius: 10px; -fx-padding: 0px;">
+      <VBox fx:id="vbox1" alignment="CENTER" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="50.0" spacing="20.0" style="-fx-background-radius: 10px; -fx-padding: 0px;">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
          <children>
-            <Label text="Dia" />
+            <Label fx:id="diasemana" text="Dia da semana" />
          </children>
       </VBox>
-      <VBox alignment="CENTER" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="104.0" spacing="20.0" style="-fx-background-radius: 10px; -fx-padding: 0px;">
+      <VBox fx:id="vbox2" alignment="CENTER" onMouseClicked="#abrircalendario" prefHeight="156.0" prefWidth="104.0" spacing="20.0" style="-fx-background-radius: 10px; -fx-padding: 0px;">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
          <children>
-            <Label onMouseClicked="#switchToSecondary" text="Primary View" />
+            <Label fx:id="dia" onMouseClicked="#switchToSecondary" text="Dia" />
          </children>
       </VBox>
    </children>

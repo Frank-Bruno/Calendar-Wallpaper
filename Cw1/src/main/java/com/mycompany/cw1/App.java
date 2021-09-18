@@ -23,15 +23,26 @@ public class App extends Application {
     private static Scene scene;
     private static Stage stage;
     public static Stage primaryStage;
+    public static GoogleCalendarApp GoogleCalendarApp;
     @Override
     public void start(Stage stage1) throws IOException {
+        resolucao r = new resolucao();
+        // estádio do calendário do google
+        primaryStage = new Stage();
+        GoogleCalendarApp = new GoogleCalendarApp();
+        GoogleCalendarApp.start(primaryStage);
+        //primaryStage.show();
+        //primaryStage.hide();
+        
         //estádio construido para deixar sem botão o wallpaper
         stage1.initStyle(StageStyle.UTILITY);
-        stage1.setOpacity(0);
-        stage1.setHeight(0);
-        stage1.setWidth(0);
+        stage1.setOpacity(1);
+        stage1.setHeight(-1);
+        stage1.setWidth(-1);
+        stage1.setX(r.getLar() - 20);
+        stage1.setY(0);
         stage1.show();
-        resolucao r = new resolucao();
+        
         //estádio do wallpaper
         stage = new Stage();
         stage.initOwner(stage1);
@@ -43,11 +54,7 @@ public class App extends Application {
         stage.setY(25);
         stage.show();
         
-        // estádio do calendário do google
-        primaryStage = new Stage();
-        GoogleCalendarApp GoogleCalendarApp = new GoogleCalendarApp();
-        GoogleCalendarApp.start(primaryStage);
-        primaryStage.hide();
+        
         
     }
 
