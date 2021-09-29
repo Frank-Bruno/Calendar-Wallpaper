@@ -3,7 +3,6 @@ package com.mycompany.cw1;
 
 
 import com.calendarfx.google.GoogleCalendarApp;
-import com.calendarfx.view.CalendarView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

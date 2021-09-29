@@ -28,15 +28,15 @@ import javafx.stage.StageStyle;
 
 public class GoogleCalendarApp extends Application {
     public CalendarView calendarView = new CalendarView();
-    public GoogleCalendarAppView appView = new GoogleCalendarAppView(calendarView);
+    //public GoogleCalendarAppView appView = new GoogleCalendarAppView(calendarView);
     @Override
     public void start(Stage primaryStage) {
-        //CalendarView calendarView = new CalendarView();
+        CalendarView calendarView = new CalendarView();
         calendarView.setToday(LocalDate.now());
         calendarView.setTime(LocalTime.now());
         calendarView.setShowDeveloperConsole(Boolean.getBoolean("calendarfx.developer"));
         
-        //GoogleCalendarAppView appView = new GoogleCalendarAppView(calendarView);
+        GoogleCalendarAppView appView = new GoogleCalendarAppView(calendarView);
         appView.getStylesheets().add(CalendarView.class.getResource("calendar.css").toExternalForm());
 
         primaryStage.initStyle(StageStyle.UNIFIED);
@@ -45,6 +45,7 @@ public class GoogleCalendarApp extends Application {
         primaryStage.setWidth(840);
         primaryStage.setHeight(640);
         primaryStage.centerOnScreen();
+        //primaryStage.show();
     }
 
     public static void main(String[] args) {
